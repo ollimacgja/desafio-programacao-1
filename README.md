@@ -1,3 +1,26 @@
+Desafio concluido.
+
+Tecnologias utilizadas:
+-Rails 4.2.0
+-Ruby 2.2.0
+-Postgresql
+-Rvm
+
+Para instalar o sistema localmente, basta ter o RVM e postgresql instalados e clonar o repositorio.
+
+Ao entrar no repositorio basta executar o bundle.
+
+Rode os comandos:
+rake db:create
+rake db:migrate
+rails s
+
+Basta acessar o link http://localhost:3000
+
+Caso deseje visualizar o projeto online, ele está hospedado no Heroku no seguinte link:
+desafioprogramacao.herokuapp.com
+
+==========================================================================================
 # Desafio de programação 1
 A idéia deste desafio é nos permitir avaliar melhor as habilidades de candidatos à vagas de programador, de vários níveis.
 

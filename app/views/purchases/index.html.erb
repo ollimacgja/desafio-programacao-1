@@ -1,0 +1,22 @@
+<h1>Purchases</h1>
+<% if @purchases.any? %>
+	<table class="table table-hover">
+		<thead>
+			<th>Purchaser Name</th>
+			<th>Item Description</th>
+			<th>Item Price</th>
+			<th>Purchase Count</th>
+			<th>Merchant</th>
+			<th>Total</th>
+		</thead>
+		<tbody>
+			<% @purchases.each do |purchase| %>
+				<tr>
+					<%= render purchase %>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+<% else %>
+	<p>There are no Purchases</p>
+<% end %>

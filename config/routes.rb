@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
-  resources :merchants
+  resources :uploads
 
+  resources :itens
+
+  resources :purchases
+
+  resources :merchants
+  resources :upload
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -8,7 +14,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   devise_scope :user do
     authenticated :user do
-      root 'merchants#index', as: :authenticated_root
+      root 'uploads#index', as: :authenticated_root
     end
 
     unauthenticated do

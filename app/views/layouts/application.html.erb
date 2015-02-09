@@ -7,20 +7,23 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= nav_bar do %>
-    <%= menu_group do %>
-        <%= menu_item "Home", '#' %>
-        <%= menu_item "About Us", '#' %>
-        <%= menu_item "Contact", '#' %>
+<div class="container-fluid">
+  <div class="col-md-10 col-md-offset-1">
+    <%= nav_bar do %>
+      <% if current_user %>
+        <%= menu_group do %>
+            <%= menu_item "Uploads", uploads_path %>
+            <%= menu_item "Itens", itens_path %>
+            <%= menu_item "Merchants", merchants_path %>
+            <%= menu_item "Purchases", purchases_path %>
+            <%= menu_item "Log Out", destroy_user_session_path, :method => :delete %>
+          <% end %>
+      <% end %>
     <% end %>
-    <% if current_user %>
-   		<%= menu_group pull: :right do %>
-        	<%= menu_item "Log Out", destroy_user_session_path, :method => :delete %>
-        <% end %>
-    <% end %>
-<% end %>
-<%= bootstrap_flash %>
-<%= yield %>
+    <%= bootstrap_flash %>
+    <%= yield %>
+  </div>
+</div>
 
 </body>
 </html>

@@ -1,0 +1,6 @@
+<td><%= purchase.purchaser_name %></td>
+<td><%= purchase.item.try(:description) %></td>
+<td><%= number_to_currency(purchase.item.try(:price)) %></td>
+<td><%= purchase.count %></td>
+<td><%= purchase.item.try(:merchant_name) %></td>
+<td><%= number_to_currency(purchase.total) || 9 %></td>

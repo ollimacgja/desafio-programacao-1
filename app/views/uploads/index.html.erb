@@ -1,0 +1,20 @@
+<h1>Uploads</h1>
+<% if @uploads.any? %>
+	<table class="table table-hover">
+		<thead>
+			<th>Filename</th>
+			<th>Purchase count</th>
+			<th>Total Income</th>
+		</thead>
+		<tbody>
+			<% @uploads.each do |upload| %>
+				<tr>
+					<%= render upload %>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+<% else %>
+	<p>There are no uploads. Please, upload a file.</p>
+<% end %>
+<%= link_to "Upload a File", new_upload_path, class: 'btn btn-success' %>

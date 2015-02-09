@@ -1,0 +1,19 @@
+<h1>Itens</h1>
+<% if @itens.any? %>
+	<table class="table table-hover">
+		<thead>
+			<th>Description</th>
+			<th>Price</th>
+			<th>Merchant</th>
+		</thead>
+		<tbody>
+			<% @itens.each do |item| %>
+				<tr>
+					<%= render item %>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+<% else %>
+	<p>There are no Itens</p>
+<% end %>
